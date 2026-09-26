@@ -1,0 +1,4 @@
+# Private working files (not part of the website)
+CLAUDE.md
+.claude/
+.DS_Store
