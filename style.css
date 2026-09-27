@@ -108,6 +108,7 @@ h2{font-size:clamp(36px,5vw,64px);letter-spacing:-.03em;line-height:1.05;font-we
 .stats small{color:var(--mute);font-size:15px}
 .feature h3{font-size:clamp(28px,3vw,36px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin-bottom:24px}
 .feature p{color:var(--mute);font-size:17px;line-height:1.6;margin-bottom:28px}
+.feature .info p:last-child{margin-bottom:0}
 .bubble{position:absolute;left:5.6%;top:35%;width:47.5%;background:var(--ink);color:var(--on-ink);border-radius:18px;padding:18px 20px;min-width:0;transform:rotate(-2deg);
   box-shadow:0 16px 32px rgba(0,0,0,.4)}
 .bubble::after{content:"";position:absolute;left:24px;bottom:-8px;width:16px;height:16px;background:var(--ink);transform:rotate(45deg);border-radius:3px}
@@ -139,7 +140,7 @@ h2{font-size:clamp(36px,5vw,64px);letter-spacing:-.03em;line-height:1.05;font-we
 .moment small{display:block;color:var(--mute);font-size:15px;max-width:440px;margin:0 auto}
 
 /* contact */
-.contact{padding:140px 0 60px;overflow:hidden;text-align:center}
+.contact{padding:120px 0;overflow:hidden;text-align:center}
 .mega{font-size:clamp(40px,6vw,84px);line-height:1.05;letter-spacing:-.03em;max-width:1000px;margin:18px auto 24px}
 .mail{display:inline-block;font-size:clamp(20px,3vw,40px);font-weight:800;letter-spacing:-.01em;border-bottom:3px solid var(--pink);padding-bottom:2px;transition:color .2s,border-color .2s}
 .mail:hover{color:var(--yellow);border-color:var(--yellow)}
