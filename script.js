@@ -1,5 +1,5 @@
 // skills ticker (duplicated once so the loop is seamless)
-const words = ['A/B testing','Onboarding','Homepage','Lifecycle design','AI-assisted workflows','Design systems','User research','Referral programs','Human-centred AI','Prompt-driven prototyping'];
+const words = ['A/B testing','Onboarding','Design QA','Lifecycle design','AI-assisted workflows','Design systems','User research','Referral programs','Human-centred AI','Prompt-driven prototyping'];
 const track = document.getElementById('track');
 const build = () => words.map((w,i)=>`<span class="${i%3===0?'hi':''}">${w}</span><i></i>`).join('');
 track.innerHTML = build() + build();
