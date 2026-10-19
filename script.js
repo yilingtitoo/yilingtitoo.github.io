@@ -27,3 +27,25 @@ document.querySelectorAll('a.soon').forEach(a => a.addEventListener('click', ev 
   clearTimeout(t);
   t = setTimeout(() => toast.classList.remove('show'), 1800);
 }));
+
+// theme toggle (initial theme is set by the inline script in <head>)
+const themeBtn = document.getElementById('themeToggle');
+const metaTheme = document.querySelector('meta[name="theme-color"]');
+const syncTheme = () => {
+  const light = document.documentElement.getAttribute('data-theme') === 'light';
+  themeBtn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
+  themeBtn.setAttribute('aria-pressed', light ? 'true' : 'false');
+  if (metaTheme) metaTheme.setAttribute('content', light ? '#FFFFFF' : '#0C0D18');
+};
+syncTheme();
+let fadeT;
+themeBtn.addEventListener('click', () => {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  root.classList.add('theme-fade');
+  root.setAttribute('data-theme', next);
+  syncTheme();
+  try { localStorage.setItem('theme', next); } catch (e) {}
+  clearTimeout(fadeT);
+  fadeT = setTimeout(() => root.classList.remove('theme-fade'), 400);
+});

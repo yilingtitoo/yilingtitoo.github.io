@@ -8,6 +8,11 @@
 <meta property="og:title" content="Yiling Yeap · Product Designer">
 <meta property="og:description" content="Specialist, User Experience at Standard Chartered, based in Malaysia.">
 <meta name="theme-color" content="#0C0D18">
+<script>
+(function(){var t='dark';try{var s=localStorage.getItem('theme');if(s==='light'||s==='dark')t=s;else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e){try{if(matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e2){}}
+document.documentElement.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#FFFFFF':'#0C0D18');})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
@@ -17,7 +22,11 @@
 
 <a class="brand" href="#top">Yiling Yeap</a>
 <nav class="nav" aria-label="Primary">
-  <a href="#work">Work</a><a href="#about">About</a><a href="#beyond">Beyond</a><a href="#contact">Contact</a>
+  <a href="#work">Work</a><a href="#about">About</a><a href="#beyond">Beyond</a><a href="#contact">Contact</a><span class="nav-sep" aria-hidden="true"></span>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+  <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
 </nav>
 
 <header class="hero" id="top">
