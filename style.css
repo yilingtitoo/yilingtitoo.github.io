@@ -232,6 +232,7 @@ html[data-theme="light"]{
 .case .wrap{max-width:1168px}
 .case .a-pink{--a:var(--pink-t)}.case .a-peri{--a:var(--peri-t)}.case .a-yellow{--a:var(--yellow-t)}.case .a-mint{--a:var(--mint-t)}
 .case .s-pink{--st:var(--st-pink)}.case .s-peri{--st:var(--st-peri)}.case .s-yellow{--st:var(--st-yellow)}.case .s-mint{--st:var(--st-mint)}
+.n-pinkperi{background-image:linear-gradient(90deg,var(--pink-x),var(--peri))}
 .n-mintpink{background-image:linear-gradient(90deg,var(--mint-x),var(--peri))}
 .big{-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 .cs-h1 .g-mint-peri{background-image:linear-gradient(90deg,var(--mint-x),var(--peri))}
@@ -258,6 +259,8 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 .cs-grid{display:grid;gap:20px;align-items:stretch}
 .cs-grid.g4{grid-template-columns:repeat(4,1fr)}
 .cs-grid.g3{grid-template-columns:repeat(3,1fr)}
+.cs-grid.g2{grid-template-columns:repeat(2,1fr)}
+.cs-grid.g5{grid-template-columns:repeat(5,1fr);gap:20px}
 .cs-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:28px;min-width:0}
 .cs-num{font-size:14px;font-weight:800;color:var(--a)}
 .cs-card h3{font-size:18px;line-height:26px;font-weight:700;color:var(--ink);letter-spacing:0;text-wrap:pretty}
@@ -299,6 +302,23 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 .stat .lbl{font-size:16px;line-height:22px;font-weight:700;color:var(--ink)}
 .stat .sub2{font-size:14px;line-height:20px;color:var(--mute)}
 
+/* Onboarding Missions page additions */
+.wide-text .mtypes{display:flex;flex-direction:column;gap:18px;margin-top:4px}
+.mtypes li{position:relative;display:flex;flex-direction:column;gap:4px;padding-left:20px}
+.mtypes li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;border-radius:50%;background:var(--a)}
+.mtypes b{font-size:16px;line-height:22px;font-weight:700;color:var(--ink)}
+.mtypes span{font-size:15px;line-height:23px;color:var(--mute)}
+.cs-card.wide:has(.mtypes) .wide-text{width:400px}
+.shots.tall .stage{height:500px}
+.sc-dash{width:230px;height:auto;aspect-ratio:345/1007}
+.sc-reward{width:190px;height:auto;aspect-ratio:418/1001}
+.sc-dark{width:175px;height:auto;aspect-ratio:368/995}
+.sc-err{width:185px;height:auto;aspect-ratio:463/1000}
+.cs-grid.g5 .stat{padding:28px 22px}
+.cs-grid.g5 .stat .big{font-size:44px;line-height:48px;letter-spacing:-.015em}
+.cs-grid.g5 .stat .lbl{font-size:15px;line-height:21px}
+.cs-grid.g5 .stat .sub2{font-size:13px;line-height:19px}
+
 /* footer */
 .cs-foot{border-top:1px solid var(--line);padding:40px 24px 48px;text-align:center;font-size:14px;color:var(--mute)}
 
@@ -315,6 +335,8 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .cs-card.wide{gap:28px;padding:28px}
   .wide-text{width:260px}
   .cs-grid.g4{grid-template-columns:repeat(2,1fr)}
+  .cs-grid.g5{grid-template-columns:repeat(3,1fr)}
+  .cs-card.wide:has(.mtypes) .wide-text{width:300px}
 }
 @media(max-width:900px){
   .cs-hero{padding:120px 0 80px}
@@ -322,10 +344,13 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .cs-hero-vis{justify-self:stretch;max-width:none}
   .cs-sec{padding-bottom:84px}
   .cs-sec h2{font-size:36px;line-height:42px}
-  .cs-grid.g3{grid-template-columns:1fr}
+  .cs-grid.g3,.cs-grid.g2{grid-template-columns:1fr}
   .cs-card.wide{flex-direction:column;align-items:stretch;gap:24px}
-  .wide-text{width:auto}
+  .wide-text,.cs-card.wide:has(.mtypes) .wide-text{width:auto}
   .wide-stage{flex:none;width:100%}
+}
+@media(max-width:700px){
+  .cs-grid.g5{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:560px){
   h1.cs-h1{font-size:34px;line-height:38px}
@@ -336,6 +361,7 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .cs-card.wide{padding:24px}
   .wide-stage{gap:12px;padding:24px 14px}
   .shots .stage{height:400px}
+  .shots.tall .stage{height:500px}
   .stat .big{font-size:44px;line-height:48px}
   .meta{gap:18px 28px}
 }

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Onboarding Missions · Yiling Yeap</title>
+<meta name="description" content="Designing MoneyLion Onboarding Missions: purpose-driven tasks that turn early interest into first-time activation. A case study by Yiling Yeap.">
+<meta property="og:title" content="Onboarding Missions · Yiling Yeap">
+<meta property="og:description" content="Designing MoneyLion Onboarding Missions to drive first-time activation.">
+<meta name="theme-color" content="#0C0D18">
+<script>
+(function(){var t='dark';try{var s=localStorage.getItem('theme');if(s==='light'||s==='dark')t=s;else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e){try{if(matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e2){}}
+document.documentElement.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#FFFFFF':'#0C0D18');})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>/* critical fallback: keeps the theme toggle from ever rendering as an unstyled button */
+.theme-toggle{width:36px;height:36px;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle}
+.theme-toggle svg{width:18px;height:18px;display:block}
+.theme-toggle .i-moon{display:none}
+html[data-theme="light"] .theme-toggle .i-sun{display:none}
+html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
+<!-- Cache-busting: bump ?v= on style.css and script.js (here and below) whenever either file changes -->
+<link rel="stylesheet" href="style.css?v=20261023a">
+</head>
+<body class="case">
+
+<a class="brand" href="index.html">Yiling Yeap</a>
+<nav class="nav" aria-label="Primary">
+  <a href="index.html#work" class="on" aria-current="page">Work</a><a href="index.html#about">About</a><a href="index.html#beyond">Beyond</a><a href="index.html#contact">Contact</a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+  <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+</nav>
+
+<main>
+<header class="cs-hero" id="top">
+  <div class="wrap cs-hero-grid">
+    <div class="cs-hero-copy">
+      <a class="back" href="index.html#work">Back to work</a>
+      <div class="eyebrow">Onboarding Missions · MoneyLion</div>
+      <h1 class="cs-h1">Designing Onboarding Missions to Drive <span class="g-mint-peri">First-Time Activation</span></h1>
+      <p class="cs-sub">Guiding users with purpose-driven tasks to turn early interest into real engagement.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Product designer</dd></div>
+        <div><dt>Scope</dt><dd>Web and app</dd></div>
+        <div><dt>Company</dt><dd>MoneyLion</dd></div>
+        <div><dt>Focus</dt><dd>Day 1 engagement</dd></div>
+      </dl>
+    </div>
+    <div class="vis cs-hero-vis"><img src="assets/onboarding.png" alt="MoneyLion Earn and Learn onboarding mission screen" width="640" height="429"></div>
+  </div>
+</header>
+
+<section class="cs-sec" id="problem">
+  <div class="wrap reveal">
+    <div class="eyebrow">The problem</div>
+    <h2>New users signed up, then didn’t know where to start.</h2>
+    <p class="cs-lead">Goal: help new users experience MoneyLion’s core value quickly with clear, action-driven onboarding missions, to boost Day 1 and Day 7 engagement, increase first-time deposit setup, and improve product discovery and feature engagement.</p>
+    <ul class="cs-grid g4">
+      <li class="cs-card"><p class="cs-num a-pink">01</p><h3>New users were dropping off after sign-up without exploring MoneyLion features.</h3></li>
+      <li class="cs-card"><p class="cs-num a-peri">02</p><h3>Users didn’t know what to do next or how to unlock value quickly.</h3></li>
+      <li class="cs-card"><p class="cs-num a-yellow">03</p><h3>Early tasks lacked incentives or feedback, making the experience passive.</h3></li>
+      <li class="cs-card"><p class="cs-num a-mint">04</p><h3>Limited visibility into what actions drove long-term retention.</h3></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cs-sec" id="strategy">
+  <div class="wrap reveal">
+    <div class="eyebrow">Strategy</div>
+    <h2>Turn passive exploration into rewarding progress.</h2>
+    <p class="cs-lead">New users often dropped off after sign-up, unsure of what to do next. To reduce early churn and drive early wins, we introduced guided missions.</p>
+    <ul class="cs-grid g2">
+      <li class="cs-card strat a-mint"><span class="bar" aria-hidden="true"></span><h3>What we introduced</h3><ul><li>Actionable mission checklist (set up direct deposit, complete a quiz, check Credit Builder)</li><li>Incentives for completing key steps, with a progress UI to visualise completion</li><li>Smart dialog, Discover feed, in-app and push messages to support the mission flow</li></ul></li>
+      <li class="cs-card strat a-peri"><span class="bar" aria-hidden="true"></span><h3>Why it mattered</h3><ul><li>Helped users understand what MoneyLion offers and where to begin</li><li>Created momentum and early reward moments</li><li>Improved confidence through clear guidance</li></ul></li>
+    </ul>
+  </div>
+</section>
+
+<section class="cs-sec" id="showcase">
+  <div class="wrap reveal">
+    <div class="eyebrow">Design showcase</div>
+    <h2>How the missions work.</h2>
+    <div class="showcase">
+      <article class="cs-card wide a-mint">
+        <div class="wide-text">
+          <p class="cs-num">01</p>
+          <h3>Mission types</h3>
+          <ul class="mtypes">
+            <li class="a-mint"><b>Main quests</b><span>Core actions from Day 0 to Day 30 that introduce MoneyLion’s key features.</span></li>
+            <li class="a-peri"><b>Side quests</b><span>Weekly missions over the first 4 weeks after sign-up that encourage continued exploration.</span></li>
+            <li class="a-yellow"><b>Weekly bonus</b><span>Earned by completing all missions before a set deadline, then claimed on the campaign page.</span></li>
+          </ul>
+        </div>
+        <div class="stage s-mint wide-stage"><img class="screen sc-dash" src="assets/onboarding-dashboard.png" alt="MoneyLion Earn and Learn mission dashboard showing main quests, a progress bar and tasks to complete" width="345" height="1007" loading="lazy"></div>
+      </article>
+      <div class="cs-grid g3 shots tall">
+      <article class="cs-card show a-peri">
+        <div class="stage s-peri"><img class="screen sc-reward" src="assets/onboarding-reward.png" alt="MoneyLion congratulations screen after completing missions, showing $20.00 earned and a View my rewards button" width="418" height="1001" loading="lazy"></div>
+        <p class="cs-num">02</p>
+        <h3>Progress and rewards</h3>
+        <p class="cap">Completing missions ends on a clear reward screen.</p>
+      </article>
+      <article class="cs-card show a-yellow">
+        <div class="stage s-yellow"><img class="screen sc-dark" src="assets/onboarding-dark.png" alt="MoneyLion mission dashboard in dark mode" width="368" height="995" loading="lazy"></div>
+        <p class="cs-num">03</p>
+        <h3>Dark mode</h3>
+        <p class="cap">Designed in light and dark mode.</p>
+      </article>
+      <article class="cs-card show a-pink">
+        <div class="stage s-pink"><img class="screen sc-err" src="assets/onboarding-error.png" alt="MoneyLion error screen reading Oops, something went wrong, with a Refresh button" width="463" height="1000" loading="lazy"></div>
+        <p class="cs-num">04</p>
+        <h3>Error state</h3>
+        <p class="cap">An error state with a clear refresh action.</p>
+      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec" id="outcome">
+  <div class="wrap reveal">
+    <div class="eyebrow">Outcome</div>
+    <h2>Onboarding missions, by the numbers.</h2>
+    <p class="cs-lead">Guided missions turned passive sign-ups into active users. Combined with in-app flows and engagement surfaces, they lifted Day 1 engagement by 14% and direct deposit setup by 19%.</p>
+    <ul class="cs-grid g5">
+      <li class="cs-card stat"><p class="big n-pink">62%</p><p class="lbl">mission open rate</p></li>
+      <li class="cs-card stat"><p class="big n-peri">+14%</p><p class="lbl">Day 1 engagement</p></li>
+      <li class="cs-card stat"><p class="big n-mintpink">+19%</p><p class="lbl">direct deposit setup rate</p></li>
+      <li class="cs-card stat"><p class="big g-yellow-pink">68%</p><p class="lbl">completed 3+ tasks</p><p class="sub2">of mission starters</p></li>
+      <li class="cs-card stat"><p class="big n-pinkperi">+12</p><p class="lbl">NPS points</p><p class="sub2">among mission completers</p></li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer class="cs-foot"><p>© 2026 Yiling Yeap · Designed and built with care.</p></footer>
+
+<script src="script.js?v=20261023a"></script>
+</body>
+</html>
