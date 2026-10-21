@@ -2,7 +2,7 @@
 const words = ['A/B testing','Onboarding','Design QA','Lifecycle design','AI-assisted workflows','Design systems','User research','Referral programs','Human-centred AI','Prompt-driven prototyping'];
 const track = document.getElementById('track');
 const build = () => words.map((w,i)=>`<span class="${i%3===0?'hi':''}">${w}</span><i></i>`).join('');
-track.innerHTML = build() + build();
+if (track) track.innerHTML = build() + build();
 
 // scroll reveal
 const io = new IntersectionObserver(entries => entries.forEach(e => {
@@ -12,7 +12,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 // active nav link
 const links = [...document.querySelectorAll('.nav a')];
-const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+const sections = links.map(a => { const href = a.getAttribute('href'); return href.charAt(0) === '#' ? document.querySelector(href) : null; });
 const spy = new IntersectionObserver(entries => entries.forEach(e => {
   if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id));
 }), { rootMargin: '-45% 0px -50% 0px' });
@@ -23,6 +23,7 @@ const toast = document.getElementById('toast');
 let t;
 document.querySelectorAll('a.soon').forEach(a => a.addEventListener('click', ev => {
   ev.preventDefault();
+  if (!toast) return;
   toast.classList.add('show');
   clearTimeout(t);
   t = setTimeout(() => toast.classList.remove('show'), 1800);
@@ -32,14 +33,15 @@ document.querySelectorAll('a.soon').forEach(a => a.addEventListener('click', ev 
 const themeBtn = document.getElementById('themeToggle');
 const metaTheme = document.querySelector('meta[name="theme-color"]');
 const syncTheme = () => {
+  if (!themeBtn) return;
   const light = document.documentElement.getAttribute('data-theme') === 'light';
   themeBtn.setAttribute('aria-label', light ? 'Switch to dark mode' : 'Switch to light mode');
   themeBtn.setAttribute('aria-pressed', light ? 'true' : 'false');
   if (metaTheme) metaTheme.setAttribute('content', light ? '#FFFFFF' : '#0C0D18');
 };
-syncTheme();
+if (themeBtn) syncTheme();
 let fadeT;
-themeBtn.addEventListener('click', () => {
+if (themeBtn) themeBtn.addEventListener('click', () => {
   const root = document.documentElement;
   const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
   root.classList.add('theme-fade');

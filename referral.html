@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Referral · Yiling Yeap</title>
+<meta name="description" content="Designing the MoneyLion Referral Program: an end-to-end referral experience across app, web and email. A case study by Yiling Yeap.">
+<meta property="og:title" content="Referral · Yiling Yeap">
+<meta property="og:description" content="Designing the MoneyLion Referral Program across app, web and email.">
+<meta name="theme-color" content="#0C0D18">
+<script>
+(function(){var t='dark';try{var s=localStorage.getItem('theme');if(s==='light'||s==='dark')t=s;else if(window.matchMedia&&matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e){try{if(matchMedia('(prefers-color-scheme: light)').matches)t='light';}catch(e2){}}
+document.documentElement.setAttribute('data-theme',t);
+var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('content',t==='light'?'#FFFFFF':'#0C0D18');})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>/* critical fallback: keeps the theme toggle from ever rendering as an unstyled button */
+.theme-toggle{width:36px;height:36px;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle}
+.theme-toggle svg{width:18px;height:18px;display:block}
+.theme-toggle .i-moon{display:none}
+html[data-theme="light"] .theme-toggle .i-sun{display:none}
+html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
+<!-- Cache-busting: bump ?v= on style.css and script.js (here and below) whenever either file changes -->
+<link rel="stylesheet" href="style.css?v=20261022a">
+</head>
+<body class="case">
+
+<a class="brand" href="index.html">Yiling Yeap</a>
+<nav class="nav" aria-label="Primary">
+  <a href="index.html#work" class="on" aria-current="page">Work</a><a href="index.html#about">About</a><a href="index.html#beyond">Beyond</a><a href="index.html#contact">Contact</a>
+  <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" aria-pressed="false">
+  <svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+  <svg class="i-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+</button>
+</nav>
+
+<main>
+<header class="cs-hero" id="top">
+  <div class="wrap cs-hero-grid">
+    <div class="cs-hero-copy">
+      <a class="back" href="index.html#work">Back to work</a>
+      <div class="eyebrow">Referral · MoneyLion</div>
+      <h1 class="cs-h1">Designing the MoneyLion <span class="g-mint-peri">Referral Program</span></h1>
+      <p class="cs-sub">Creating an end-to-end referral experience to drive acquisition, increase retention, and scale through lifecycle comms.</p>
+      <dl class="meta">
+        <div><dt>Role</dt><dd>Founding designer</dd></div>
+        <div><dt>Scope</dt><dd>App, web, email</dd></div>
+        <div><dt>Company</dt><dd>MoneyLion</dd></div>
+        <div><dt>Timeline</dt><dd>2021 to 2022</dd></div>
+      </dl>
+    </div>
+    <div class="vis cs-hero-vis"><img src="assets/referral.png" alt="MoneyLion Share and earn referral screen held in a hand" width="640" height="460"></div>
+  </div>
+</header>
+
+<section class="cs-sec" id="problem">
+  <div class="wrap reveal">
+    <div class="eyebrow">The problem</div>
+    <h2>Get people to invite, and keep inviting.</h2>
+    <p class="cs-lead">Goal: build a scalable referral program that motivates existing users to invite friends, engages new users post-signup, and strengthens product adoption through lifecycle touchpoints.</p>
+    <ul class="cs-grid g4">
+      <li class="cs-card"><p class="cs-num a-pink">01</p><h3>How do we get users to participate, and keep referring?</h3></li>
+      <li class="cs-card"><p class="cs-num a-peri">02</p><h3>How do we retain new users once they join?</h3></li>
+      <li class="cs-card"><p class="cs-num a-yellow">03</p><h3>How do we keep the program fresh and rewarding?</h3></li>
+      <li class="cs-card"><p class="cs-num a-mint">04</p><h3>How do we communicate value clearly across product and email?</h3></li>
+      </ul>
+  </div>
+</section>
+
+<section class="cs-sec" id="strategy">
+  <div class="wrap reveal">
+    <div class="eyebrow">Strategy</div>
+    <h2>Reward the users already here.</h2>
+    <p class="cs-lead">Research showed that existing MoneyLion users were a strong acquisition driver, so we built a referral experience to empower and reward them.</p>
+    <ul class="cs-grid g3">
+      <li class="cs-card strat a-pink"><span class="bar" aria-hidden="true"></span><h3>Encourage referrers</h3><ul><li>Earn up to $55</li><li>Festive campaign bonuses</li><li>Personalised referral post and friend nudges</li></ul></li>
+      <li class="cs-card strat a-peri"><span class="bar" aria-hidden="true"></span><h3>Retain referees</h3><ul><li>Sign-up incentive ($55 via direct deposit)</li><li>Immediate invitation to refer others</li><li>Embedded onboarding to MoneyLion products</li></ul></li>
+      <li class="cs-card strat a-mint"><span class="bar" aria-hidden="true"></span><h3>Lifecycle email strategy</h3><ul><li>Existing users: intro → tips → earnings recap</li><li>New users: welcome → deposit email → intro to referral program</li><li>Product education woven into email comms</li></ul></li>
+      </ul>
+  </div>
+</section>
+
+<section class="cs-sec" id="showcase">
+  <div class="wrap reveal">
+    <div class="eyebrow">Design showcase</div>
+    <h2>From MVP to Referral 2.0.</h2>
+    <div class="showcase">
+      <article class="cs-card wide a-mint">
+        <div class="wide-text">
+          <p class="cs-num">01</p>
+          <h3>Two releases</h3>
+          <p class="cap">2021: a simple invite flow that let referrers and referees earn up to $55. 2022: Referral 2.0 moved the experience from MLDS 2.0 to 3.0 and added RoarTag.</p>
+        </div>
+        <div class="stage s-mint wide-stage">
+          <figure class="rel"><figcaption>2021</figcaption><img class="screen sc-rel" src="assets/referral-2021.png" alt="2021 MoneyLion Refer and earn screen: invite a friend and earn up to $55, with a referral code and tracking" width="170" height="491" loading="lazy"></figure>
+          <span class="arrow" aria-hidden="true">→</span>
+          <figure class="rel"><figcaption>2022</figcaption><img class="screen sc-rel" src="assets/referral-2022.png" alt="2022 MoneyLion Share and earn screen in Referral 2.0 showing bonus earned, active bonuses and a RoarTag" width="170" height="491" loading="lazy"></figure>
+        </div>
+      </article>
+      <div class="cs-grid g3 shots">
+      <article class="cs-card show a-peri">
+        <div class="stage s-peri"><img class="screen sc-roar" src="assets/referral-roartag.png" alt="MoneyLion share sheet showing a personal RoarTag name badge and options to share it to social apps" width="200" height="433" loading="lazy"></div>
+        <p class="cs-num">02</p>
+        <h3>RoarTag</h3>
+        <p class="cap">A personal ID users can customise and share on social media.</p>
+      </article>
+      <article class="cs-card show a-yellow">
+        <div class="stage s-yellow"><img class="screen sc-fest" src="assets/referral-festive.png" alt="MoneyLion Halloween Bonus referral screen with a countdown and steps to earn" width="150" height="442" loading="lazy"></div>
+        <p class="cs-num">03</p>
+        <h3>Festive campaigns</h3>
+        <p class="cap">Festive bonuses like Halloween ran across the app and email. Together they lifted referral volume by up to 68%.</p>
+      </article>
+      <article class="cs-card show a-pink">
+        <div class="stage s-pink"><img class="screen sc-mail" src="assets/referral-emails.png" alt="MoneyLion lifecycle email titled Rewards or nah, with a flowchart asking if you want to earn referral rewards" width="250" height="361" loading="lazy"></div>
+        <p class="cs-num">04</p>
+        <h3>Lifecycle emails</h3>
+        <p class="cap">Pro tips, monthly reward recaps, and a gamified experiment kept referrers engaged.</p>
+      </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec" id="outcome">
+  <div class="wrap reveal">
+    <div class="eyebrow">Outcome</div>
+    <h2>Referral at MoneyLion, by the numbers.</h2>
+    <p class="cs-lead">By designing across product, email, and user motivation, we gave loyal users a reason to invite friends and gave new users a reason to stay.</p>
+    <ul class="cs-grid g4">
+      <li class="cs-card stat"><p class="big n-pink">61K+</p><p class="lbl">new users via referral</p></li>
+      <li class="cs-card stat"><p class="big n-peri">$275</p><p class="lbl">avg reward earned</p></li>
+      <li class="cs-card stat"><p class="big n-mintpink">40-55%</p><p class="lbl">email open rate</p><p class="sub2">22-31% click-through rate</p></li>
+      <li class="cs-card stat"><p class="big g-yellow-pink">68%</p><p class="lbl">festive campaign uplift</p><p class="sub2">referral volume vs. baseline</p></li>
+      </ul>
+  </div>
+</section>
+</main>
+
+<footer class="cs-foot"><p>© 2026 Yiling Yeap · Designed and built with care.</p></footer>
+
+<script src="script.js?v=20261022a"></script>
+</body>
+</html>
