@@ -366,66 +366,20 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .meta{gap:18px 28px}
 }
 
-/* ============ Straight2Bank case study page additions ============ */
-.n-mintperi{background-image:linear-gradient(90deg,var(--mint-x),var(--peri))}
-.cs-label{font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
-/* problem rows */
-.cs-rows{display:flex;flex-direction:column;gap:16px}
-.cs-card.cs-row,#problem .cs-card.cs-row{display:flex;flex-direction:row;align-items:flex-start;gap:24px;padding:24px 28px}
-.cs-row .cs-num{flex:none;line-height:26px}
-.cs-row h3{flex:none;width:340px}
-.cs-row .cap{flex:1 1 0;min-width:0;line-height:24px}
-/* ranks */
-.cs-card.rank{display:flex;flex-direction:column;gap:6px;padding:26px 24px}
-.rank .big{font-size:40px;line-height:44px;font-weight:800;letter-spacing:-.012em}
-.rank .lbl{font-size:15px;line-height:21px;font-weight:700;color:var(--ink)}
-/* strategy cards (text version) */
-.cs-grid.plain{padding-top:12px}
+/* strat cards (shared with referral and onboarding) */
 .strat.a-mint,.strat.a-peri,.strat.a-pink{gap:16px}
 .strat > p{font-size:16px;line-height:24px;color:var(--mute)}
-/* showcase */
-.s2b-show .cs-card.wide{gap:36px}
-.s2b-show .wide-text{width:320px}
-.s2b-show .wide-stage{gap:20px;padding:32px 24px}
-.s2b-show .rel{flex:0 1 auto}
-.s2b-show .s2b-before{width:250px}
-.s2b-show .s2b-after{width:330px}
-.s2b-show .screen{border-radius:10px;width:100%;height:auto;max-width:100%}
-.s2b-shots .stage{height:260px;padding:0 16px}
-.s2b-shots .screen{width:256px}
-/* findings */
-.cs-grid.findings{padding-top:12px}
-.cs-card.finding{display:flex;flex-direction:column;gap:16px;padding:28px 28px 32px;border-radius:24px}
-.finding h3{font-size:22px;line-height:28px;font-weight:800;letter-spacing:-.005em}
-.finding .cap{font-size:15px;line-height:23px}
-.qbox{margin-top:0;padding:20px;border-radius:16px;display:flex;flex-direction:column;gap:12px;
-  background:color-mix(in srgb,var(--a) 12%,transparent);border:1px solid color-mix(in srgb,var(--a) 40%,transparent)}
-.qbox blockquote{font-size:15px;line-height:23px;font-weight:700;color:var(--ink)}
-.qbox figcaption{font-size:13px;line-height:18px;color:var(--mute)}
-/* outcome quote */
-.cs-quote{display:flex;flex-direction:column;gap:12px}
-.cs-quote blockquote{font-size:30px;line-height:38px;font-weight:800;letter-spacing:-.008em}
-.cs-quote .g-mint-peri{background-image:linear-gradient(90deg,var(--mint-x),var(--peri))}
-.cs-quote figcaption{font-size:15px;line-height:22px;color:var(--mute)}
-@media(max-width:900px){
-  .cs-grid.g4.ranks{grid-template-columns:repeat(2,1fr)}
-  .s2b-show .wide-text{width:auto}
-  .s2b-show .wide-stage{padding:28px 20px}
-}
-@media(max-width:700px){
-  .cs-card.cs-row,#problem .cs-card.cs-row{flex-direction:column;gap:10px}
-  .cs-row h3{width:auto}
-  .cs-quote blockquote{font-size:24px;line-height:32px}
-}
+/* home page: confidential Straight2Bank card (not a link) */
+.badge-conf{position:absolute;top:24px;left:24px;z-index:3;display:inline-flex;align-items:center;gap:8px;padding:9px 16px 9px 14px;border-radius:999px;
+  font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;line-height:1;color:var(--ink);
+  background:color-mix(in srgb,var(--bg) 82%,transparent);border:1px solid color-mix(in srgb,var(--ink) 18%,transparent);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.badge-conf svg,.conf-note svg{flex:none;display:block}
+.badge-conf svg{color:var(--peri-t)}
+.feature .conf-note{display:flex;align-items:center;gap:10px;margin-top:20px;font-size:14px;font-weight:700;color:var(--mute)}
+.feature.conf:hover .vis img{transform:none}
+.feature.conf .info p:not(.conf-note){margin-bottom:0}
 @media(max-width:560px){
-  .cs-grid.g4.ranks{grid-template-columns:repeat(2,1fr);gap:12px}
-  .cs-card.rank{padding:20px 18px}
-  .rank .big{font-size:34px;line-height:38px}
-  .s2b-show .wide-stage{flex-direction:column;gap:16px;padding:24px 16px}
-  .s2b-show .rel{width:100%;max-width:330px}
-  .s2b-show .s2b-before{max-width:250px}
-  .s2b-show .arrow{transform:rotate(90deg)}
-  .s2b-shots .stage{height:220px}
+  .badge-conf{top:14px;left:14px;padding:7px 12px 7px 10px;gap:6px;font-size:11px}
+  .feature.conf .bubble{top:42%}
 }
-/* home page: Straight2Bank card link; bubble lets clicks through to the image link */
-.bubble{pointer-events:none}

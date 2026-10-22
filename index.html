@@ -23,7 +23,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 html[data-theme="light"] .theme-toggle .i-sun{display:none}
 html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 <!-- Cache-busting: bump ?v= on style.css and script.js (here and below) whenever either file changes -->
-<link rel="stylesheet" href="style.css?v=20261025a">
+<link rel="stylesheet" href="style.css?v=20261027a">
 </head>
 <body>
 
@@ -88,9 +88,10 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
       </div>
     </article>
 
-    <article class="feature flip reveal">
+    <article class="feature flip conf reveal">
       <div class="vis">
-        <a href="straight2bank.html" aria-label="Read the Straight2Bank case study"><img src="assets/s2b.png" alt="Straight2Bank dashboard on a laptop" width="640" height="497"></a>
+        <span class="badge-conf"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Z"/></svg>Confidential</span>
+        <img src="assets/s2b.png" alt="Straight2Bank dashboard on a laptop" width="640" height="497">
         <figure class="bubble">
           <blockquote>"This looks so modern. It's very Standard Chartered."</blockquote>
           <figcaption>User, Standard Chartered user testing session</figcaption>
@@ -101,8 +102,9 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
           <div><b class="n-peri">31</b><small>rounds of user testing</small></div>
           <div><b class="n-yellow">5</b><small>widgets validated</small></div>
         </div>
-        <h3><a href="straight2bank.html">From cluttered dashboard to command centre</a></h3>
+        <h3>From cluttered dashboard to command centre</h3>
         <p>I co-led the homepage redesign for Straight2Bank, helping corporate banking users get their work done faster, see what needs action, and stop jumping between screens, all from one page. It went through 31 rounds of testing and 4 design iterations before launch.</p>
+        <p class="conf-note"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Z"/></svg>Confidential. Walkthrough available in interviews.</p>
       </div>
     </article>
 
@@ -173,6 +175,6 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite">Case study coming soon</div>
-<script src="script.js?v=20261025a"></script>
+<script src="script.js?v=20261027a"></script>
 </body>
 </html>
