@@ -383,13 +383,6 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 .cs-grid.plain{padding-top:12px}
 .strat.a-mint,.strat.a-peri,.strat.a-pink{gap:16px}
 .strat > p{font-size:16px;line-height:24px;color:var(--mute)}
-/* journey */
-.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
-.cs-card.step{display:flex;flex-direction:column;gap:8px;padding:20px 18px;border-radius:16px}
-.step b{font-size:16px;font-weight:800;color:var(--ink)}
-.step span{font-size:14px;line-height:21px;color:var(--mute)}
-.cs-card.step.final{background:color-mix(in srgb,var(--mint) 14%,transparent);border-color:var(--mint)}
-.step.final b{color:var(--mint-t)}
 /* showcase */
 .s2b-show .cs-card.wide{gap:36px}
 .s2b-show .wide-text{width:320px}
@@ -416,7 +409,6 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 .cs-quote figcaption{font-size:15px;line-height:22px;color:var(--mute)}
 @media(max-width:900px){
   .cs-grid.g4.ranks{grid-template-columns:repeat(2,1fr)}
-  .journey{grid-template-columns:repeat(2,1fr)}
   .s2b-show .wide-text{width:auto}
   .s2b-show .wide-stage{padding:28px 20px}
 }
@@ -429,7 +421,6 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .cs-grid.g4.ranks{grid-template-columns:repeat(2,1fr);gap:12px}
   .cs-card.rank{padding:20px 18px}
   .rank .big{font-size:34px;line-height:38px}
-  .journey{grid-template-columns:1fr}
   .s2b-show .wide-stage{flex-direction:column;gap:16px;padding:24px 16px}
   .s2b-show .rel{width:100%;max-width:330px}
   .s2b-show .s2b-before{max-width:250px}
