@@ -23,7 +23,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 html[data-theme="light"] .theme-toggle .i-sun{display:none}
 html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 <!-- Cache-busting: bump ?v= on style.css and script.js (here and below) whenever either file changes -->
-<link rel="stylesheet" href="style.css?v=20261028a">
+<link rel="stylesheet" href="style.css?v=20261030i">
 </head>
 <body>
 
@@ -77,7 +77,11 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
     </div>
 
     <article class="feature reveal">
-      <div class="vis"><a href="referral.html" aria-label="Read the Referral case study"><img src="assets/referral.png" alt="MoneyLion Share and earn referral screen held in a hand" width="640" height="460"></a></div>
+      <div class="vis"><a href="referral.html" aria-label="Read the Referral case study"><div class="anim anim-referral"><img class="base" src="assets/referral-plate.png?v=20261030i" alt="MoneyLion Share and earn referral screen held in a hand" width="640" height="460">
+          <img class="el el-roary" src="assets/referral-tag-roary.png?v=20261030i" alt="" width="148" height="163" style="left:2.9688%;top:43.0435%;width:23.125%;height:35.5435%">
+          <img class="el el-meow" src="assets/referral-tag-meownylyon.png?v=20261030i" alt="" width="208" height="131" style="left:62.1875%;top:3.2609%;width:32.5%;height:28.4783%">
+          <img class="el el-star" src="assets/referral-star.png?v=20261030i" alt="" width="88" height="104" style="left:86.5625%;top:67.1739%;width:13.75%;height:22.7174%">
+        </div></a></div>
       <div class="info">
         <div class="stats">
           <div><b class="n-pink">61K+</b><small>new users</small></div>
@@ -88,7 +92,27 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
       </div>
     </article>
 
-    <article class="feature flip conf reveal">
+    <article class="feature flip reveal">
+      <div class="vis"><a href="onboarding.html" aria-label="Read the Onboarding Missions case study"><div class="anim anim-onboarding"><img class="base" src="assets/onboarding-plate.png?v=20261030i" alt="MoneyLion Earn and Learn onboarding mission screen" width="640" height="429" loading="lazy">
+          <img class="el el-coin-large" src="assets/onboarding-coin-large.png?v=20261030i" alt="" width="103" height="97" loading="lazy" style="left:86.1719%;top:-0.1166%;width:16.0938%;height:22.7273%">
+          <img class="el el-band" src="assets/onboarding-confetti-band.png?v=20261030i" alt="" width="66" height="64" loading="lazy" style="left:80.625%;top:20.979%;width:10.3906%;height:14.9184%">
+          <img class="el el-star-s" src="assets/onboarding-star-small.png?v=20261030i" alt="" width="39" height="39" loading="lazy" style="left:90.3125%;top:23.0769%;width:6.0938%;height:9.0909%">
+          <img class="el el-yellow" src="assets/onboarding-confetti-yellow.png?v=20261030i" alt="" width="38" height="48" loading="lazy" style="left:19.0625%;top:13.986%;width:5.9375%;height:11.3054%">
+          <img class="el el-star-p" src="assets/onboarding-star-spiky.png?v=20261030i" alt="" width="27" height="27" loading="lazy" style="left:16.9531%;top:21.3287%;width:4.2188%;height:6.2937%">
+          <img class="el el-coin-dollar" src="assets/onboarding-coin-dollar.png?v=20261030i" alt="" width="125" height="132" loading="lazy" style="left:-3.125%;top:66.4336%;width:19.6094%;height:30.8858%">
+          <img class="el el-cash" src="assets/onboarding-cash.png?v=20261030i" alt="" width="112" height="50" loading="lazy" style="left:73.5156%;top:69.8135%;width:17.5%;height:11.655%">
+        </div></a></div>
+      <div class="info">
+        <div class="stats">
+          <div><b class="n-pink">68%</b><small>of starters completed 3+&nbsp;tasks</small></div>
+          <div><b class="n-peri">+19%</b><small>direct deposit setup</small></div>
+        </div>
+        <h3><a href="onboarding.html">Turning day one into a habit</a></h3>
+        <p>I designed a mission-based onboarding system for MoneyLion, moving passive sign-ups to active, engaged users through clear, action-driven tasks. It lifted Day&nbsp;1 engagement by 14% and pushed direct deposit setup up 19%.</p>
+      </div>
+    </article>
+
+    <article class="feature conf reveal">
       <div class="vis">
         <span class="badge-conf"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 10V8a5 5 0 0 1 10 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h1Zm2 0h6V8a3 3 0 0 0-6 0v2Z"/></svg>Confidential</span>
         <img src="assets/s2b.png" alt="Straight2Bank dashboard on a laptop" width="640" height="497">
@@ -104,18 +128,6 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
         </div>
         <h3>From cluttered dashboard to command centre</h3>
         <p>I co-led the homepage redesign for Straight2Bank, helping corporate banking users get their work done faster, see what needs action, and stop jumping between screens, all from one page. It went through 31 rounds of testing and 4 design iterations before launch.</p>
-      </div>
-    </article>
-
-    <article class="feature reveal">
-      <div class="vis"><a href="onboarding.html" aria-label="Read the Onboarding Missions case study"><img src="assets/onboarding.png" alt="MoneyLion Earn and Learn onboarding mission screen" width="640" height="429" loading="lazy"></a></div>
-      <div class="info">
-        <div class="stats">
-          <div><b class="n-pink">68%</b><small>of starters completed 3+&nbsp;tasks</small></div>
-          <div><b class="n-peri">+19%</b><small>direct deposit setup</small></div>
-        </div>
-        <h3><a href="onboarding.html">Turning day one into a habit</a></h3>
-        <p>I designed a mission-based onboarding system for MoneyLion, moving passive sign-ups to active, engaged users through clear, action-driven tasks. It lifted Day&nbsp;1 engagement by 14% and pushed direct deposit setup up 19%.</p>
       </div>
     </article>
   </div>
@@ -174,6 +186,6 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 </main>
 
 <div class="toast" id="toast" role="status" aria-live="polite">Case study coming soon</div>
-<script src="script.js?v=20261028a"></script>
+<script src="script.js?v=20261030i"></script>
 </body>
 </html>

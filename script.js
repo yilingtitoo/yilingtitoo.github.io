@@ -51,3 +51,42 @@ if (themeBtn) themeBtn.addEventListener('click', () => {
   clearTimeout(fadeT);
   fadeT = setTimeout(() => root.classList.remove('theme-fade'), 400);
 });
+
+
+// Hover extras on the animated feature images: sparkle burst + pointer parallax (phone stays still)
+(() => {
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cards = document.querySelectorAll('.anim');
+  if (!cards.length) return;
+  const star = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.8 6.2 5.8 11.2 12 12-6.2.8-11.2 5.8-12 12-.8-6.2-5.8-11.2-12-12C6.2 11.2 11.2 6.2 12 0z"/></svg>';
+  const spots = {
+    'anim-referral': [[8,22,'--yellow',18,0],[93,58,'--mint',14,.5],[52,5,'--pink',12,1.1],[91,92,'--yellow',16,.3],[4,68,'--peri',13,.8],[70,8,'--yellow',10,1.5]],
+    'anim-onboarding': [[7,38,'--yellow',16,0],[93,40,'--pink',14,.6],[48,5,'--mint',12,1.2],[26,12,'--yellow',10,.4],[80,86,'--peri',15,.9],[4,88,'--yellow',12,1.4]]
+  };
+  cards.forEach(card => {
+    const key = card.classList.contains('anim-referral') ? 'anim-referral' : 'anim-onboarding';
+    if (!reduce) (spots[key] || []).forEach(([x, y, col, size, delay]) => {
+      const sp = document.createElement('span');
+      sp.className = 'spark';
+      sp.style.cssText = 'left:' + x + '%;top:' + y + '%;--c:var(' + col + ');--s:' + size + 'px;--d:' + delay + 's';
+      sp.innerHTML = star;
+      card.appendChild(sp);
+    });
+    if (reduce) return;
+    let tx = 0, ty = 0, cx = 0, cy = 0, raf = 0;
+    const tick = () => {
+      cx += (tx - cx) * 0.07; cy += (ty - cy) * 0.07;
+      card.style.setProperty('--mx', cx.toFixed(3));
+      card.style.setProperty('--my', cy.toFixed(3));
+      raf = (Math.abs(tx - cx) > 0.002 || Math.abs(ty - cy) > 0.002) ? requestAnimationFrame(tick) : 0;
+    };
+    const go = () => { if (!raf) raf = requestAnimationFrame(tick); };
+    card.addEventListener('pointermove', e => {
+      const r = card.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      go();
+    });
+    card.addEventListener('pointerleave', () => { tx = 0; ty = 0; go(); });
+  });
+})();

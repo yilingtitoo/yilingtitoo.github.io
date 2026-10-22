@@ -241,7 +241,9 @@ html[data-theme="light"]{
 .cs-hero{padding:130px 0 120px;position:relative}
 .cs-hero-grid{display:grid;grid-template-columns:540px 1fr;gap:40px;align-items:center;justify-content:space-between}
 .cs-hero-copy{display:flex;flex-direction:column;gap:24px;align-items:flex-start;min-width:0}
-.case .back{font-size:14px;font-weight:700;color:var(--mute);transition:color .2s}
+.case .back{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--mute);transition:color .2s}
+.case .back svg{flex:none;transition:transform .25s ease}
+.case .back:hover svg{transform:translateX(-4px)}
 .case .back:hover{color:var(--ink)}
 .case .back:focus-visible{outline:2px solid var(--peri);outline-offset:4px;border-radius:4px}
 h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
@@ -382,3 +384,78 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
   .badge-conf{top:14px;left:14px;padding:7px 12px 7px 10px;gap:6px;font-size:11px}
   .feature.conf .bubble{top:42%}
 }
+
+/* ============ Home hover micro-animations: Referral + Onboarding cards ============
+   Plate (phone and hand, never moves) + separate decorative layers exported from Figma.
+   Motion is driven by two registered custom properties: --p (loops while hovered, paused
+   otherwise) and --amp (transitions 0 to 1 on hover, so layers ease in and glide home on
+   hover out). Browsers without @property simply show the static image. */
+@property --p{syntax:'<number>';inherits:false;initial-value:0}
+@property --amp{syntax:'<number>';inherits:false;initial-value:0}
+.feature .vis .anim{position:relative;display:block;width:100%;aspect-ratio:var(--ar);line-height:0;
+  --tx:0px;--ty:0px;--rot:0deg;--sc:0;--op:0;--dur:3.4s;--delay:0s;--wave:anim-swing}
+.anim-referral{--ar:640/460}
+.anim-onboarding{--ar:640/429}
+.feature .vis .anim img{max-width:none}
+.feature .vis .anim img.base,.feature:hover .vis .anim img.base{position:relative;display:block;width:100%;height:100%;transform:none;transition:none;will-change:auto}
+.feature .vis .anim img.el,.feature:hover .vis .anim img.el{
+  position:absolute;display:block;pointer-events:none;
+  --k:calc(var(--p) * var(--amp));
+  transform:translate(calc(var(--tx) * var(--k) + var(--mx,0) * var(--depth,6px) * var(--amp)),calc(var(--ty) * var(--k) + var(--my,0) * var(--depth,6px) * var(--amp))) rotate(calc(var(--rot) * var(--k))) scale(calc(1 + var(--sc) * var(--k)));
+  opacity:calc(1 - var(--op) * var(--k) * var(--k));
+  will-change:transform;
+  animation:var(--wave) var(--dur) linear var(--delay) infinite paused;
+  transition:--amp 1.4s cubic-bezier(.22,1,.36,1)}
+@media(hover:hover){
+  .feature:hover .vis .anim img.el{--amp:1;animation-play-state:running;transition:--amp 1.2s cubic-bezier(.22,1,.36,1)}
+}
+.feature:focus-within .vis .anim img.el{--amp:1;animation-play-state:running;transition:--amp 1.2s cubic-bezier(.22,1,.36,1)}
+@keyframes anim-swing{0%{--p:0;animation-timing-function:cubic-bezier(.37,0,.63,1)}25%{--p:1;animation-timing-function:cubic-bezier(.37,0,.63,1)}75%{--p:-1;animation-timing-function:cubic-bezier(.37,0,.63,1)}100%{--p:0}}
+@keyframes anim-pulse{0%{--p:0;animation-timing-function:cubic-bezier(.37,0,.63,1)}50%{--p:1;animation-timing-function:cubic-bezier(.37,0,.63,1)}100%{--p:0}}
+/* Referral: tags bob in opposite phase, star turns and pops */
+.vis .anim .el-roary{--depth:16px;--ty:-12px;--rot:5deg;--dur:2.8s;transform-origin:50% 60%}
+.vis .anim .el-meow{--depth:14px;--ty:12px;--rot:-5deg;--dur:2.8s;transform-origin:50% 50%}
+.vis .anim .el-star{--depth:22px;--wave:anim-pulse;--rot:18deg;--sc:.14;--dur:2.2s;transform-origin:50% 55%}
+/* Onboarding: coins drift (towards the card edge they hang off), cash sways, stars twinkle */
+.vis .anim .el-coin-large{--depth:20px;--wave:anim-pulse;--tx:14px;--ty:-12px;--rot:-10deg;--dur:3.1s;transform-origin:50% 50%}
+.vis .anim .el-coin-dollar{--depth:24px;--wave:anim-pulse;--tx:-14px;--ty:-14px;--rot:10deg;--dur:3.4s;--delay:-1s;transform-origin:50% 50%}
+.vis .anim .el-cash{--depth:12px;--ty:-9px;--rot:7deg;--dur:3.1s;--delay:-.7s;transform-origin:12% 50%}
+.vis .anim .el-band{--depth:16px;--ty:8px;--rot:12deg;--tx:6px;--dur:2.8s;--delay:-.4s;transform-origin:50% 50%}
+.vis .anim .el-yellow{--depth:10px;--ty:-9px;--rot:-18deg;--dur:2.8s;--delay:-1.1s;transform-origin:50% 50%}
+.vis .anim .el-star-s{--depth:18px;--sc:.3;--op:.3;--rot:25deg;--dur:2.1s;--delay:-.3s;transform-origin:50% 50%}
+.vis .anim .el-star-p{--depth:12px;--sc:.3;--op:.3;--rot:-22deg;--dur:2.4s;--delay:-1.2s;transform-origin:50% 50%}
+@media(prefers-reduced-motion:reduce){
+  .feature .vis .anim img.el,.feature:hover .vis .anim img.el{animation:none!important;transition:none!important;transform:none;opacity:1}
+}
+
+/* Hover extras: whole-image zoom (phone included, so it stays fixed relative to the frame), shine sweep, sparkle burst, pointer parallax (see script.js) */
+.feature .vis .anim{overflow:hidden;transform:scale(1) translateZ(0);transition:transform 1.1s cubic-bezier(.16,1,.3,1)}
+@media(hover:hover){.feature:hover .vis .anim{transform:scale(1.05) translateZ(0)}}
+.feature:focus-within .vis .anim{transform:scale(1.05) translateZ(0)}
+.anim::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:4;
+  background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.22) 50%,transparent 62%);
+  transform:translateX(-120%);transition:none}
+@media(hover:hover){.feature:hover .anim::after{animation:shine 5s linear infinite}}
+.feature:focus-within .anim::after{animation:shine 5s linear infinite}
+@keyframes shine{0%{transform:translateX(-120%);animation-timing-function:cubic-bezier(.05,.6,.25,1)}48%{transform:translateX(120%)}100%{transform:translateX(120%)}}
+.anim .spark{position:absolute;z-index:3;width:var(--s,16px);height:var(--s,16px);margin:calc(var(--s,16px) / -2) 0 0 calc(var(--s,16px) / -2);pointer-events:none;
+  color:var(--c,var(--yellow));opacity:0;transform:scale(0) rotate(0deg);animation:spark 2.8s cubic-bezier(.37,0,.63,1) var(--d,0s) infinite paused}
+.anim .spark svg{display:block;width:100%;height:100%}
+@media(hover:hover){.feature:hover .anim .spark{animation-play-state:running}}
+.feature:focus-within .anim .spark{animation-play-state:running}
+@keyframes spark{0%{opacity:0;transform:scale(0) rotate(0deg)}22%{opacity:1;transform:scale(1.15) rotate(40deg)}45%{opacity:1;transform:scale(.8) rotate(80deg)}70%,100%{opacity:0;transform:scale(0) rotate(140deg)}}
+@media(prefers-reduced-motion:reduce){
+  .feature .vis .anim,.feature:hover .vis .anim{transform:none;transition:none}
+  .anim::after,.anim .spark{display:none!important}
+}
+
+/* Confidential card hover: padlock rattles and a soft ring pulses from the badge. The image and bubble stay still. */
+.badge-conf::before{content:"";position:absolute;inset:-1px;border-radius:999px;border:2px solid var(--peri-t);opacity:0;pointer-events:none}
+.badge-conf svg{transform-origin:50% 90%}
+@media(hover:hover){
+  .feature.conf:hover .badge-conf svg{animation:lock-rattle 3.2s cubic-bezier(.37,0,.63,1) infinite}
+  .feature.conf:hover .badge-conf::before{animation:lock-ring 3.2s cubic-bezier(.22,1,.36,1) infinite}
+}
+@keyframes lock-rattle{0%{transform:rotate(0)}4%{transform:rotate(-16deg)}9%{transform:rotate(14deg)}14%{transform:rotate(-10deg)}19%{transform:rotate(7deg)}24%{transform:rotate(-3deg)}30%,100%{transform:rotate(0)}}
+@keyframes lock-ring{0%{opacity:0;transform:scale(1)}6%{opacity:.7;transform:scale(1)}34%,100%{opacity:0;transform:scale(1.28,1.7)}}
+@media(prefers-reduced-motion:reduce){.feature.conf .badge-conf svg,.feature.conf .badge-conf::before{animation:none!important}}
