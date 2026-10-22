@@ -462,3 +462,6 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 
 /* Light mode: no stage box behind case-study screens; screens sit on the card and keep their shadow */
 html[data-theme="light"] .stage,html[data-theme="light"] .wide-stage{background:none}
+/* Light mode: let the shadow fall outside the stage instead of being clipped into a band; screens taller than the stage are cropped on the image itself */
+html[data-theme="light"] .stage,html[data-theme="light"] .wide-stage{overflow:visible}
+html[data-theme="light"] .stage .screen{max-height:100%}
