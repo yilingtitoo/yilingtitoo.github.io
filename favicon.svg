@@ -1,6 +1,6 @@
 <svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
 <defs>
-<clipPath id="c"><rect width="128" height="128" rx="28.8"/></clipPath>
+<clipPath id="c"><rect width="128" height="128"/></clipPath>
 <linearGradient id="g" x1="6.5" y1="3.1" x2="135.6" y2="124.9" gradientUnits="userSpaceOnUse">
 <stop stop-color="#00E0B8"/><stop offset=".5" stop-color="#8D9CF0"/><stop offset="1" stop-color="#F4A6B5"/>
 </linearGradient>
