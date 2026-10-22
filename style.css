@@ -460,5 +460,5 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 @keyframes lock-ring{0%{opacity:0;transform:scale(1)}6%{opacity:.7;transform:scale(1)}34%,100%{opacity:0;transform:scale(1.28,1.7)}}
 @media(prefers-reduced-motion:reduce){.feature.conf .badge-conf svg,.feature.conf .badge-conf::before{animation:none!important}}
 
-/* Light mode: flat white stage behind case-study screens (no gradient); screens keep their shadow */
-html[data-theme="light"] .stage,html[data-theme="light"] .wide-stage{background:var(--bg)}
+/* Light mode: no stage box behind case-study screens; screens sit on the card and keep their shadow */
+html[data-theme="light"] .stage,html[data-theme="light"] .wide-stage{background:none}
