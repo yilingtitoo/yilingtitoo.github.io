@@ -459,3 +459,6 @@ h1.cs-h1{font-size:56px;line-height:60px;letter-spacing:-.02em;font-weight:800}
 @keyframes lock-rattle{0%{transform:rotate(0)}4%{transform:rotate(-16deg)}9%{transform:rotate(14deg)}14%{transform:rotate(-10deg)}19%{transform:rotate(7deg)}24%{transform:rotate(-3deg)}30%,100%{transform:rotate(0)}}
 @keyframes lock-ring{0%{opacity:0;transform:scale(1)}6%{opacity:.7;transform:scale(1)}34%,100%{opacity:0;transform:scale(1.28,1.7)}}
 @media(prefers-reduced-motion:reduce){.feature.conf .badge-conf svg,.feature.conf .badge-conf::before{animation:none!important}}
+
+/* Light mode: no drop shadow under case-study screens, a hairline edge instead */
+html[data-theme="light"] .screen{box-shadow:none;outline:1px solid rgba(12,13,24,.08);outline-offset:-1px}
