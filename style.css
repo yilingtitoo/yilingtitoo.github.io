@@ -91,9 +91,10 @@ h1 .ln:nth-child(2) .w{animation-delay:.12s}
 .cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap;justify-content:center;opacity:0;animation:fade .8s .7s forwards}
 @keyframes up{to{transform:none}}
 @keyframes fade{to{opacity:1}}
-.glow{position:absolute;border-radius:50%;filter:blur(140px);pointer-events:none}
-.g-pink{width:36.1%;aspect-ratio:1;left:74.3%;top:4.2%;background:var(--glow-pink)}
-.g-peri{width:36.1%;aspect-ratio:520/420;left:-8.3%;top:38.7%;background:var(--glow-peri)}
+.glow{position:absolute;border-radius:50%;pointer-events:none;transform:scale(1.9)}
+/* radial falloff instead of filter:blur(140px): same soft look, but no huge blurred GPU layer (very slow on iOS Safari) */
+.g-pink{width:36.1%;aspect-ratio:1;left:74.3%;top:4.2%;background:radial-gradient(closest-side,var(--glow-pink),transparent)}
+.g-peri{width:36.1%;aspect-ratio:520/420;left:-8.3%;top:38.7%;background:radial-gradient(closest-side,var(--glow-peri),transparent)}
 .deco{position:absolute;inset:0;z-index:2;pointer-events:none}
 .tag{position:absolute;padding:12px 20px;border-radius:999px;transform:translate(-50%,-50%) rotate(var(--r));background:var(--bg);border:2px solid currentColor;font-weight:800;font-size:16px;line-height:1.2;white-space:nowrap;box-shadow:0 8px 24px var(--tag-shadow);animation:flt 5s ease-in-out infinite}
 .t-mint{color:var(--mint-t);left:26.8%;top:26.1%;--r:10deg}
@@ -111,6 +112,7 @@ h1 .ln:nth-child(2) .w{animation-delay:.12s}
 @media(max-width:900px){
   .hero{min-height:0;padding:120px 24px 80px}
   .tag,.spark,.d-white{display:none}
+  .dot{animation:none}
   .d-yellow{top:16%;left:8%}
   .g-pink{width:70%;left:40%}.g-peri{width:70%}
 }
