@@ -19,7 +19,8 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap"></noscript>
 <style>/* critical fallback: keeps the theme toggle from ever rendering as an unstyled button */
 .theme-toggle{width:36px;height:36px;padding:0;margin:0;border:0;background:none;color:inherit;font:inherit;display:inline-grid;place-items:center;cursor:pointer;vertical-align:middle}
 .theme-toggle svg{width:18px;height:18px;display:block}
@@ -27,7 +28,7 @@ var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute('co
 html[data-theme="light"] .theme-toggle .i-sun{display:none}
 html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 <!-- Cache-busting: bump ?v= on style.css and script.js (here and below) whenever either file changes -->
-<link rel="stylesheet" href="style.css?v=20261031e">
+<link rel="stylesheet" href="style.css?v=20261101a">
 </head>
 <body class="case">
 
@@ -55,7 +56,7 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
         <div><dt>Timeline</dt><dd>2021 to 2022</dd></div>
       </dl>
     </div>
-    <div class="vis cs-hero-vis"><img src="assets/referral.png" alt="MoneyLion Share and earn referral screen held in a hand" width="640" height="460"></div>
+    <div class="vis cs-hero-vis"><img fetchpriority="high" src="assets/referral.webp?v=20261101a" alt="MoneyLion Share and earn referral screen held in a hand" width="640" height="460"></div>
   </div>
 </header>
 
@@ -98,26 +99,26 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
           <p class="cap">2021: a simple invite flow that let referrers and referees earn up to $55. 2022: Referral 2.0 moved the experience from MLDS 2.0 to 3.0 and added RoarTag.</p>
         </div>
         <div class="stage s-mint wide-stage">
-          <figure class="rel"><figcaption>2021</figcaption><img class="screen sc-rel" src="assets/referral-2021.png?v=20261031e" alt="2021 MoneyLion Refer and earn screen: invite a friend and earn up to $55, with a referral code and tracking" width="170" height="491" loading="lazy"></figure>
+          <figure class="rel"><figcaption>2021</figcaption><img class="screen sc-rel" src="assets/referral-2021.webp?v=20261101a" alt="2021 MoneyLion Refer and earn screen: invite a friend and earn up to $55, with a referral code and tracking" width="170" height="491" loading="lazy"></figure>
           <span class="arrow" aria-hidden="true">→</span>
-          <figure class="rel"><figcaption>2022</figcaption><img class="screen sc-rel" src="assets/referral-2022.png?v=20261031e" alt="2022 MoneyLion Share and earn screen in Referral 2.0 showing bonus earned, active bonuses and a RoarTag" width="170" height="491" loading="lazy"></figure>
+          <figure class="rel"><figcaption>2022</figcaption><img class="screen sc-rel" src="assets/referral-2022.webp?v=20261101a" alt="2022 MoneyLion Share and earn screen in Referral 2.0 showing bonus earned, active bonuses and a RoarTag" width="170" height="491" loading="lazy"></figure>
         </div>
       </article>
       <div class="cs-grid g3 shots">
       <article class="cs-card show a-peri">
-        <div class="stage s-peri"><img class="screen sc-roar" src="assets/referral-roartag.png?v=20261031e" alt="MoneyLion share sheet showing a personal RoarTag name badge and options to share it to social apps" width="200" height="433" loading="lazy"></div>
+        <div class="stage s-peri"><img class="screen sc-roar" src="assets/referral-roartag.webp?v=20261101a" alt="MoneyLion share sheet showing a personal RoarTag name badge and options to share it to social apps" width="200" height="433" loading="lazy"></div>
         <p class="cs-num">02</p>
         <h3>RoarTag</h3>
         <p class="cap">A personal ID users can customise and share on social media.</p>
       </article>
       <article class="cs-card show a-yellow">
-        <div class="stage s-yellow"><img class="screen sc-fest" src="assets/referral-festive.png?v=20261031e" alt="MoneyLion Halloween Bonus referral screen with a countdown and steps to earn" width="150" height="442" loading="lazy"></div>
+        <div class="stage s-yellow"><img class="screen sc-fest" src="assets/referral-festive.webp?v=20261101a" alt="MoneyLion Halloween Bonus referral screen with a countdown and steps to earn" width="150" height="442" loading="lazy"></div>
         <p class="cs-num">03</p>
         <h3>Festive campaigns</h3>
         <p class="cap">Festive bonuses like Halloween ran across the app and email. Together they lifted referral volume by up to 68%.</p>
       </article>
       <article class="cs-card show a-pink">
-        <div class="stage s-pink"><img class="screen sc-mail" src="assets/referral-emails.png?v=20261031e" alt="MoneyLion lifecycle email titled Rewards or nah, with a flowchart asking if you want to earn referral rewards" width="250" height="361" loading="lazy"></div>
+        <div class="stage s-pink"><img class="screen sc-mail" src="assets/referral-emails.webp?v=20261101a" alt="MoneyLion lifecycle email titled Rewards or nah, with a flowchart asking if you want to earn referral rewards" width="250" height="361" loading="lazy"></div>
         <p class="cs-num">04</p>
         <h3>Lifecycle emails</h3>
         <p class="cap">Pro tips, monthly reward recaps, and a gamified experiment kept referrers engaged.</p>
@@ -144,6 +145,6 @@ html[data-theme="light"] .theme-toggle .i-moon{display:block}</style>
 
 <footer class="cs-foot"><p>© 2026 Yiling Yeap · Designed and built with care.</p></footer>
 
-<script src="script.js?v=20261031e"></script>
+<script src="script.js?v=20261101a"></script>
 </body>
 </html>
